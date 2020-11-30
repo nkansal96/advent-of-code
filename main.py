@@ -84,4 +84,6 @@ if __name__ == "__main__":
             "seconds",
         )
     else:
-        print("Solution:", solution(input_data))
+        ans = solution(input_data)
+        if ans is not None:
+            print("Solution:", ans)

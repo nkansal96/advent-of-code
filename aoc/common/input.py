@@ -6,6 +6,9 @@ from typing import Union, Callable, Iterator, Optional, TypeVar, Iterable, Type
 T = TypeVar("T")
 U = TypeVar("U")
 
+NL = "\n"
+COMMA = ","
+
 
 def JSON(data: str) -> dict:
     return json.loads(data)
