@@ -7,6 +7,7 @@ T = TypeVar("T")
 U = TypeVar("U")
 
 NL = "\n"
+NLNL = "\n\n"
 COMMA = ","
 
 
