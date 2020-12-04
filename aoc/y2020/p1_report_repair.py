@@ -5,7 +5,7 @@ from aoc.common import solution
 
 
 @solution.part_one(year=2020, problem=1)
-def part_one(data: input.Tokenized["\n"]) -> int:
+def _(data: input.Tokenized[input.NL]) -> int:
     items = data.each_token_as(int)
     counts = Counter(items)
 
@@ -18,7 +18,7 @@ def part_one(data: input.Tokenized["\n"]) -> int:
 
 
 @solution.part_two(year=2020, problem=1)
-def part_two(data: input.Tokenized["\n"]) -> int:
+def _(data: input.Tokenized[input.NL]) -> int:
     items = list(data.each_token_as(int))
     counts = Counter(items)
 

@@ -16,11 +16,11 @@ def count_trees(grid: List[str], slope: Tuple[int, int]) -> int:
 
 
 @solution.part_one(year=2020, problem=3)
-def part_one(grid: input.Tokenized["\n"]) -> int:
+def _(grid: input.Tokenized[input.NL]) -> int:
     return count_trees(list(grid), (3, 1))
 
 
 @solution.part_two(year=2020, problem=3)
-def part_two(grid: input.Tokenized["\n"]) -> int:
+def _(grid: input.Tokenized[input.NL]) -> int:
     slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
     return math.prod(count_trees(list(grid), slope) for slope in slopes)

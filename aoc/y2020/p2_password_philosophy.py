@@ -14,7 +14,7 @@ def parse_password(line: str) -> Tuple[int, int, str, str]:
 
 
 @solution.part_one(year=2020, problem=2)
-def part_one(data: input.Tokenized["\n"]) -> int:
+def _(data: input.Tokenized[input.NL]) -> int:
     def is_password_valid(lower: int, upper: int, ch: str, pw: str):
         return lower <= Counter(pw).get(ch, 0) <= upper
 
@@ -23,7 +23,7 @@ def part_one(data: input.Tokenized["\n"]) -> int:
 
 
 @solution.part_two(year=2020, problem=2)
-def part_two(data: input.Tokenized["\n"]) -> int:
+def _(data: input.Tokenized[input.NL]) -> int:
     def is_password_valid(lower: int, upper: int, ch: str, pw: str):
         return (pw[lower - 1] == ch) ^ (pw[upper - 1] == ch)
 
