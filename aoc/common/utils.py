@@ -1,5 +1,5 @@
 import hashlib
-from typing import Tuple, Callable
+from typing import Any, Callable, Tuple
 
 
 def sign(x: int) -> int:
@@ -16,3 +16,31 @@ def iter_md5(
         i += 1
         md5 = hashlib.md5(bytes(data + str(i), "utf-8")).digest()
     return i, md5
+
+
+def rindex(lst, item):
+    """
+    Find first place item occurs in list, but starting at end of list.
+    Return index of item in list, or -1 if item not found in the list.
+    """
+    for i in range(len(lst) - 1, -1, -1):
+        if lst[i] == item:
+            return i
+    return -1
+
+
+def is_iterable(data: Any) -> bool:
+    try:
+        iter(data)
+        return True
+    except TypeError:
+        return False
+
+
+def hash_(data: Any) -> int:
+    """ Intelligently hashes arbitrary data """
+    if isinstance(data, dict):
+        return hash(tuple(map(hash_, data.items())))
+    if is_iterable(data):
+        return hash(tuple(map(hash_, data)))
+    return hash(data)
