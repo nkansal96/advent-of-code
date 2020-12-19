@@ -29,6 +29,12 @@ def rindex(lst, item):
     return -1
 
 
+def concat(lst, default=""):
+    for i in lst:
+        default += i
+    return default
+
+
 def is_iterable(data: Any) -> bool:
     try:
         iter(data)
